@@ -7,14 +7,13 @@ import './index.css';
 export default function Pokemon({name, index}) {
 
     const [pathImage, setPathImage] = useState('');
-    console.log("nome do bicho", name);
 
     useEffect(()=> {
         fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
         .then(response => response.json())
         .then(data => setPathImage(data.sprites.front_default))
 
-    }, []);
+    }, [name]);
 
     return <>
         <li key={index}>
