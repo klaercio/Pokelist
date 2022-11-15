@@ -6,6 +6,7 @@ li {
     border-radius: 7px;
     transition: 0.5s;
     text-align: center;
+    height: 9rem;
 }
 
 li:hover {
