@@ -16,11 +16,15 @@ export default function Pokemon({name, index}) {
     }, [name]);
 
     return <>
-        <li key={index}>
-            <div className="img">
-                <Link to={`/details/${index}`}><img src={pathImage} alt={name}/></Link>
-            </div>
-            <span>{name}</span>
-        </li>
+            <li key={index}>
+                <div className="img">
+                    <img src={pathImage} alt={name}/>
+                </div>
+                <span>{name}</span>
+                <div className="botoes">
+                    <Link to={`/details/${name}`} className="botao">Details</Link>
+                    <Link to={`/evolution/${name}`} className="botao">Evolution</Link>
+                </div>
+            </li>
     </>
 }

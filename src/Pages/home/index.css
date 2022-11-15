@@ -7,8 +7,12 @@
 ul {
     list-style : none;
     display: grid;
-    grid-template-columns : repeat(auto-fit , minmax(120px, 1fr));
+    grid-template-columns : repeat(auto-fit , minmax(150px, 1fr));
     column-gap : 3rem;
     row-gap : 4rem;
     justify-items: stretch
+}
+
+body {
+    background-color: #625F63;
 }
