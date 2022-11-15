@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import { Link } from "react-router-dom";
+import './index.css';
 
 
 export default function Pokemon({name, index}) {
@@ -17,7 +18,9 @@ export default function Pokemon({name, index}) {
 
     return <>
         <li key={index}>
-            <Link to={`/details/${index}`}><img src={pathImage} alt={name}/></Link>
+            <div className="img">
+                <Link to={`/details/${index}`}><img src={pathImage} alt={name}/></Link>
+            </div>
             <span>{name}</span>
         </li>
     </>

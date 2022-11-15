@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
 import Pokemon from "../../Components/Pokemon";
+import './index.css';
 
 export default function Home() {
 
     const [pokemons, setPokemons] = useState([]);
-    const [pokemonsImage, setPokemonsImage] = useState([]);
 
     useEffect(()=> {
         fetch(`https://pokeapi.co/api/v2/pokemon/`)
@@ -13,7 +13,7 @@ export default function Home() {
     }, []);
 
     return <>
-        <div>
+        <div className="Pokemons">
             <ul>
                 {pokemons.map((poke, index) => (
                     <Pokemon name={poke.name} index={index}/>

@@ -1,0 +1,11 @@
+.cabecalho {
+    height: 5rem;
+    background-color: #95C3D8;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #9ED0E6;
+    height: 5rem;
+}
