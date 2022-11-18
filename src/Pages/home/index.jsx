@@ -10,7 +10,7 @@ export default function Home() {
     const loaderRef = useRef(null);
 
     useEffect(()=> {
-        fetch(`https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}"`)
+        fetch(`https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}`)
         .then(response => response.json())
         .then(data => data.results.length? setPokemons(atual => [...atual, ...data.results]): console.log("nada mais a carregar")) 
     }, [offset, limit]);
