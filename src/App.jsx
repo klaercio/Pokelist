@@ -1,13 +1,9 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
+import React, { useState } from "react";
 import './index.css'
 
 function App() {
-
   return (
-    <div className="App">
-    {/*   <Outlet/> */}
-    </div>
+    <div className="App" />
   )
 }
 

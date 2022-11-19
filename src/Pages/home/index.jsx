@@ -1,13 +1,16 @@
 import { useEffect, useRef, useState } from "react"
 import Pokemon from "../../Components/Pokemon";
+import { Sun, MoonStars } from "phosphor-react";
 import './index.css';
+
 
 export default function Home() {
 
     const [pokemons, setPokemons] = useState([]);
     const[offset, setOffset] = useState(0);
-    const[limit, setLimit] = useState(60);
+    const[limit, setLimit] = useState(30);
     const loaderRef = useRef(null);
+    const[mode, setMode] = useState(true);
 
     useEffect(()=> {
         fetch(`https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}`)
@@ -26,7 +29,7 @@ export default function Home() {
           const target = entities[0];
     
           if (target.isIntersecting){
-            setOffset(atual => atual+limit);
+            setOffset(atual => atual + limit);
           }
         }, options);
     
@@ -37,9 +40,10 @@ export default function Home() {
 
     return <>
         <div className="Pokemons">
+           {mode? <Sun size={30} className="mode sun" onClick={()=> setMode(atual => !atual)}/> : <MoonStars size={30} className="mode moon" onClick={()=> setMode(atual => !atual)}/>}
             <ul>
                 {pokemons.map((poke, index) => (
-                    <Pokemon key={index} name={poke.name} index={index}/>
+                    <Pokemon key={index} name={poke.name} index={index} mode={mode}/>
                 ))}
             </ul>
             <p ref={loaderRef}/>

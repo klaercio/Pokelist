@@ -4,6 +4,30 @@
     margin-top: 5rem;
 }
 
+.mode {
+    position: absolute;
+    right: 12%;
+    top: 100px;
+    background-color: transparent;
+    color:  #000;
+    width: 3rem;
+    height: 3rem;
+    transition: 0.5s;
+}
+
+.mode:hover {
+    cursor: pointer;
+    scale: 95%;
+}
+
+.sun {
+    color: yellow;
+}
+
+.moon {
+    color: aqua;
+}
+
 ul {
     list-style : none;
     display: grid;
@@ -15,4 +39,8 @@ ul {
 
 body {
     background-color: #625F63;
+}
+
+.body-color {
+    background-color: aliceblue;
 }
