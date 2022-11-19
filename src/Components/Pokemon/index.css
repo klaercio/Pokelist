@@ -36,6 +36,11 @@ li {
 
 .dark-span {
     color: #FFF;
+    text-shadow: 
+               -1px -1px 0px #000, 
+               -1px 1px 0px #000,                    
+                1px -1px 0px #000,                  
+                1px 0px 0px #000;
 }
 
 
@@ -54,6 +59,14 @@ li:hover {
 span {
     height: 2rem;
     align-items: flex-start;
+    font-weight: bold;
+    color: black;
+    text-shadow: 
+               -1px -1px 0px #FFF, 
+               -1px 1px 0px #FFF,                    
+                1px -1px 0px #FFF,                  
+                1px 0px 0px #FFF;
+
 }
 
 img {
@@ -65,10 +78,6 @@ img {
     width: 8rem;
     height: 8rem;
     text-align: center;
-}
-
-span {
-    color: black;
 }
 
 .botoes {
