@@ -8,6 +8,8 @@ export default function Pokemon({name, index, mode}) {
 
     const [pathImage, setPathImage] = useState('');
 
+    const imgNumber = Math.floor(Math.random() * 3 + 1);
+
     useEffect(()=> {
         fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
         .then(response => response.json())
@@ -16,7 +18,7 @@ export default function Pokemon({name, index, mode}) {
     }, [name]);
 
     return <>
-            <li key={index} className={mode? "" : "dark"}>
+            <li key={index} className={mode? `li-img${imgNumber}` : `dark li-img${imgNumber}`}>
                 <span className={mode? "": "dark-span"}>{name}</span>
                 <div className="img">
                     <img src={pathImage} alt={name}/>

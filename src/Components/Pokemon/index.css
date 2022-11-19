@@ -11,6 +11,24 @@ li {
     border-radius: 10px 20px 10px 0px;
 }
 
+.li-img1 {
+    background-image: url(../../img/fundo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.li-img2 {
+    background-image: url(../../img/fundo2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.li-img3 {
+    background-image: url(../../img/fundo3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .dark {
     background-color: #222;
     border-color: #FFF;
