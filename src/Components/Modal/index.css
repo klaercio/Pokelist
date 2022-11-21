@@ -1,0 +1,20 @@
+.modal {
+    background-color: red;
+    margin: 0 auto;
+    position: fixed;
+    top: 0%;
+    right: 50%;
+    transform: translate(50%, 25%);
+    opacity: 0%;
+    display: none;
+    width: 70%;
+    height: 70%;
+    user-select: none;
+    z-index: 100;
+}
+
+.visivel {
+    display: block;
+    opacity: 100%;
+    user-select: all;
+}

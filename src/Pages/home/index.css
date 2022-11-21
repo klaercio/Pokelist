@@ -38,7 +38,10 @@ ul {
 }
 
 body {
-    background-color: #625F63;
+    background-image: url(../../img/fundobody.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 .body-color {

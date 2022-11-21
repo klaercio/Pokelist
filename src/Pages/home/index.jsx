@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import Pokemon from "../../Components/Pokemon";
 import { Sun, MoonStars } from "phosphor-react";
 import './index.css';
+import Modal from "../../Components/Modal";
 
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
     const[limit, setLimit] = useState(30);
     const loaderRef = useRef(null);
     const[mode, setMode] = useState(true);
+    const [showModal, setShowModal] =useState(false);
 
     useEffect(()=> {
         fetch(`https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}`)
@@ -36,14 +38,15 @@ export default function Home() {
         if (loaderRef.current){
           observer.observe(loaderRef.current);
         }
-      }, []);
+      }, [limit]);
 
     return <>
         <div className="Pokemons">
            {mode? <Sun size={30} className="mode sun" onClick={()=> setMode(atual => !atual)}/> : <MoonStars size={30} className="mode moon" onClick={()=> setMode(atual => !atual)}/>}
+            <Modal showModal={showModal}/>
             <ul>
                 {pokemons.map((poke, index) => (
-                    <Pokemon key={index} name={poke.name} index={index} mode={mode}/>
+                    <Pokemon key={index} name={poke.name} index={index} mode={mode} setShowModal={() => setShowModal}/>
                 ))}
             </ul>
             <p ref={loaderRef}/>
