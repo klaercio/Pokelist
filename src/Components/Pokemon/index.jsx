@@ -16,8 +16,10 @@ export default function Pokemon({name, index, mode, setShowModal}) {
         .then(data => setPathImage(data.sprites.other.dream_world.front_default? data.sprites.other.dream_world.front_default: data.sprites.front_default));
     }, []);
 
+    setShowModal(false);
+
     return <>
-            <li key={index} className={mode? `li-img${imgNumber}` : `dark li-img${imgNumber}`} onClick={setShowModal(atual => !atual)}>
+            <li key={index} className={mode? `li-img${imgNumber}` : `dark li-img${imgNumber}`} onClick={setShowModal(true)}>
                 <span className={mode? "": "dark-span"}>{name}</span>
                 <div className="img">
                     <img src={pathImage} alt={name}/>
