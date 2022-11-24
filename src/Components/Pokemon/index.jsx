@@ -5,7 +5,7 @@ import Modal from "../Modal";
 import './index.css';
 
 
-export default function Pokemon({name, index, mode, setShowModal}) {
+export default function Pokemon({name, index, mode, setShowModal, setName}) {
 
     const [pathImage, setPathImage] = useState('');
     const imgNumber = Math.floor(Math.random() * 3 + 1);
@@ -16,10 +16,8 @@ export default function Pokemon({name, index, mode, setShowModal}) {
         .then(data => setPathImage(data.sprites.other.dream_world.front_default? data.sprites.other.dream_world.front_default: data.sprites.front_default));
     }, []);
 
-    setShowModal(false);
-
     return <>
-            <li key={index} className={mode? `li-img${imgNumber}` : `dark li-img${imgNumber}`} onClick={setShowModal(true)}>
+            <li key={index} className={mode? `li-img${imgNumber}` : `dark li-img${imgNumber}`} onClick={() => {setShowModal(true); setName(name)}}>
                 <span className={mode? "": "dark-span"}>{name}</span>
                 <div className="img">
                     <img src={pathImage} alt={name}/>

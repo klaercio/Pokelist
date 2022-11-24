@@ -14,6 +14,7 @@ export default function Home() {
     const loaderRef = useRef(null);
     const[mode, setMode] = useState(true);
     const [showModal, setShowModal] = useState(false);
+    const [Name, setName] = useState(0);
 
     useEffect(()=> {
           console.log('Open mudou rapaziada');
@@ -48,11 +49,11 @@ export default function Home() {
     return <>
         <div className="Pokemons">
            {mode? <Sun size={30} className="mode sun" onClick={()=> setMode(atual => !atual)}/> : <MoonStars size={30} className="mode moon" onClick={()=> setMode(atual => !atual)}/>}
-            <Modal showModal={showModal}/>
+            <Modal showModal={showModal} setShowModal={setShowModal}/>
             <Overlay showModal={showModal} setShowModal={setShowModal}/>
             <ul>
                 {pokemons.map((poke, index) => (
-                    <Pokemon key={index} name={poke.name} index={index} mode={mode} setShowModal={() => setShowModal}/>
+                    <Pokemon key={index} name={poke.name} index={index} mode={mode} setShowModal={setShowModal} setName={setName}/>
                 ))}
             </ul>
             <p ref={loaderRef}/>

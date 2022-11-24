@@ -4,17 +4,30 @@
     position: fixed;
     top: 0%;
     right: 50%;
-    transform: translate(50%, 25%);
+    transform: translate(100%, 100%);
     opacity: 0%;
     display: none;
     width: 70%;
     height: 70%;
     user-select: none;
     z-index: 100;
+    transition: 0.5s;
+    border-radius: 10px;
+    border: 2px solid #FFF;
+    transition: all 0.5s;
 }
 
 .visivel {
     display: block;
     opacity: 100%;
     user-select: all;
+    border-color: #FFF;
+    transform: translate(50%, 25%);
+}
+
+.botao-fechar {
+    font-size: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
